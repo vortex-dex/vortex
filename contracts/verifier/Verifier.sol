@@ -4,10 +4,10 @@ pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
 import ".././KeysWithPlonkVerifier.sol";
-import ".././base/Config.sol";
+import ".././library/Constants.sol";
 
 // Hardcoded constants to avoid accessing store
-contract Verifier is KeysWithPlonkVerifier, KeysWithPlonkVerifierOld, Config {
+contract Verifier is KeysWithPlonkVerifier, KeysWithPlonkVerifierOld, Constants {
     // solhint-disable-next-line no-empty-blocks
     function initialize(bytes calldata) external {}
 
