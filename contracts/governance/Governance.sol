@@ -2,13 +2,13 @@
 
 pragma solidity ^0.7.0;
 
-import ".././base/Config.sol";
+import "./GovernanceConstants.sol";
 import ".././utils/Utils.sol";
 import ".././token/NFTFactory.sol";
 import "./TokenGovernance.sol";
 
 /// @title Governance Contract
-contract Governance is Config {
+contract Governance is GovernanceConstants {
     /// @notice Token added to Franklin net
     event NewToken(address indexed token, uint16 indexed tokenId);
 
