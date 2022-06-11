@@ -4,10 +4,10 @@ pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
 import ".././utils/SafeMath.sol";
-import ".././base/Events.sol";
-import ".././base/Ownable.sol";
-import ".././proxy/Upgradeable.sol";
-import ".././proxy/UpgradeableMaster.sol";
+import "./UpgradeEvents.sol";
+import ".././library/Ownable.sol";
+import ".././upgrade/Upgradeable.sol";
+import ".././upgrade/UpgradeableMaster.sol";
 
 /// @title Upgrade Gatekeeper Contract
 contract UpgradeGatekeeper is UpgradeEvents, Ownable {

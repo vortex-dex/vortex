@@ -2,7 +2,7 @@
 
 pragma solidity ^0.7.0;
 
-import ".././base/Ownable.sol";
+import ".././library/Ownable.sol";
 import "./Upgradeable.sol";
 import "./UpgradeableMaster.sol";
 
