@@ -10,17 +10,17 @@ import "./utils/SafeMathUInt128.sol";
 import "./utils/SafeCast.sol";
 import "./utils/Utils.sol";
 
-import "./base/Storage.sol";
-import "./base/Config.sol";
-import "./base/Events.sol";
+import "./library/Storage.sol";
+import "./library/Constants.sol";
+import "./library/Events.sol";
 
 import "./utils/Bytes.sol";
-import "./base/Operations.sol";
+import "./library/Operations.sol";
 
-import "./proxy/UpgradeableMaster.sol";
+import "./upgrade/UpgradeableMaster.sol";
 
 /// @title vengine additional main contract
-contract AdditionalVengine is Storage, Config, Events, ReentrancyGuard {
+contract AdditionalVengine is Storage, Constants, Events, ReentrancyGuard {
     using SafeMath for uint256;
     using SafeMathUInt128 for uint128;
 
