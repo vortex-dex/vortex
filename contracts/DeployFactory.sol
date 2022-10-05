@@ -3,8 +3,8 @@
 pragma solidity ^0.7.0;
 
 import "./governance/Governance.sol";
-import "./proxy/Proxy.sol";
-import "./proxy/UpgradeGatekeeper.sol";
+import "./upgrade/Proxy.sol";
+import "./upgrade/UpgradeGatekeeper.sol";
 import "./Vengine.sol";
 import "./verifier/Verifier.sol";
 import "./TokenInit.sol";
