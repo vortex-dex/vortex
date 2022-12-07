@@ -5,7 +5,7 @@ pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
 import "./utils/Utils.sol";
-import "./base/Ownable.sol";
+import "./library/Ownable.sol";
 import "./security/ReentrancyGuard.sol";
 
 contract ForcedWithdraw is Ownable, ReentrancyGuard {
