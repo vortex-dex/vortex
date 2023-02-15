@@ -24,7 +24,8 @@ library Operations {
         ForcedWithdraw,
         MintNFT,
         WithdrawNFT,
-        Swap
+        Swap,
+        PerpetualSettlement
     }
 
     // Byte lengths
