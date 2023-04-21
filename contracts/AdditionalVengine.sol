@@ -94,6 +94,7 @@ contract AdditionalVengine is Storage, Constants, Events, ReentrancyGuard {
         require(safeExitMode, "2i"); // SafeExit mode not active
         uint64 toProcess = Utils.minU64(totalOpenPriorityRequests, _n);
         require(toProcess > 0, "2j"); // no deposits to process
+        require(_depositsPubdata.length >= toProcess, "2o");
         uint64 currentDepositIdx = 0;
         for (uint64 id = firstPriorityRequestId; id < firstPriorityRequestId + toProcess; id++) {
             if (priorityRequests[id].opType == Operations.OpType.Deposit) {

@@ -23,34 +23,23 @@ contract Verifier is KeysWithPlonkVerifier, KeysWithPlonkVerifierOld, Constants 
         uint256[] memory _individualVksInputs,
         uint256[16] memory _subproofsLimbs
     ) external view returns (bool) {
-        // #if DUMMY_VERIFIER
-        uint256 oldGasValue = gasleft();
-        // HACK: ignore warnings from unused variables
-        abi.encode(_recursiveInput, _proof, _vkIndexes, _individualVksInputs, _subproofsLimbs);
-        uint256 tmp;
-        while (gasleft() + 500000 > oldGasValue) {
-            tmp += 1;
-        }
-        return true;
-        // #else
         for (uint256 i = 0; i < _individualVksInputs.length; ++i) {
             uint256 commitment = _individualVksInputs[i];
             _individualVksInputs[i] = commitment & INPUT_MASK;
         }
         VerificationKey memory vk = getVkAggregated(uint32(_vkIndexes.length));
 
-        return
-            verify_serialized_proof_with_recursion(
-                _recursiveInput,
-                _proof,
-                VK_TREE_ROOT,
-                VK_MAX_INDEX,
-                _vkIndexes,
-                _individualVksInputs,
-                _subproofsLimbs,
-                vk
-            );
-        // #endif
+    return
+        verify_serialized_proof_with_recursion(
+            _recursiveInput,
+            _proof,
+            VK_TREE_ROOT,
+            VK_MAX_INDEX,
+            _vkIndexes,
+            _individualVksInputs,
+            _subproofsLimbs,
+            vk
+        );
     }
 
     function verifyExitProof(
