@@ -240,7 +240,7 @@ contract BlockOperator  is Storage, OperationConstants, Events, ReentrancyGuard{
     /// @dev Gets operations packed in bytes array. Unpacks it and stores onchain operations.
     /// @dev Priority operations must be committed in the same order as they are in the priority queue.
     /// @dev NOTE: does not change storage! (only emits events)
-    /// @dev processableOperationsHash - hash of the all operations that needs to be executed  (Deposit, Exits, ChangPubKey)
+    /// @dev processableOperationsHash - hash of the all operations that needs to be executed  (Exits, Withdraws)
     /// @dev priorityOperationsProcessed - number of priority operations processed in this block (Deposits, FullWithdraws)
     /// @dev offsetsCommitment - array where 1 is stored in chunk where onchainOperation begins and other are 0 (used in commitments)
     function collectOnchainOps(CommitBlockInfo memory _newBlockData)

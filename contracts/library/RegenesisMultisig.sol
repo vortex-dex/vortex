@@ -25,6 +25,8 @@ contract RegenesisMultisig is Ownable, Constants {
     uint256 securityCouncilThreshold;
 
     constructor(uint256 threshold) Ownable(msg.sender) {
+        require(threshold >0 , "1e");
+        require(SECURITY_COUNCIL_MEMBERS_NUMBER >= threshold, "1f");
         securityCouncilThreshold = threshold;
     }
 
