@@ -24,7 +24,7 @@ contract Upgrade is Storage, Constants, Events,UpgradeableMaster{
 
     /// @notice Notice period before activation preparation status of upgrade mode
     function getNoticePeriod() virtual external pure override returns (uint256) {
-        return 0;
+        return UPGRADE_NOTICE_PERIOD;
     }
 
     /// @notice Notification that upgrade notice period startedwithdrawOrStore
